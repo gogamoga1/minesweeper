@@ -1,38 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    max-width: 8%;
+    max-height: 100%;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+p {
+    font-family: 'Oswald', sans-serif;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.row {
+    display: flex;
+    height: 50px;
+}
+
+.game {
+    width: 390px;
+    box-shadow: 0 2.8px 10px darkred,
+    3px 3px 10px darkred,
+    3px -2px 8px darkred,
+    -1px -5px 10px darkred;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.field {
+    display: grid;
+    grid-template-columns: repeat(8, 40px);
+    grid-template-rows: repeat(9, 40px);
+    gap: 10px 6px;
+    padding: 1rem;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+}
+
+.props {
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+}
+
+.control-panel {
+    height: 80px;
+    font-size: 1em;
+    padding: 5px 0;
+    margin-bottom: 0.7rem;
+    
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    margin: 3px;
+    background-color: black;
+}
+
+.reset-btn {
+    width: 50px;
+}
+
+.name_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.logo-span {
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: -1px -2px 17px darkred, -2px 4px 13px darkred;
+    letter-spacing: 4px;
+    margin-right: 5px;
+}
+
+.opened {
+    background-color: rgba(4, 4, 4, 0.3);
+}
+
+.fired {
+    background-image: url('./fired.svg');
+
+}
+
+.fired,
+.marked {
+    background-size: 100%;
+    background-color: red;
+
+}
+.marked {
+    background-image: url('./target.svg');
+    background-color: black;
+}
+.opened,
+.fired,
+.marked {
+    box-shadow: 2px 2px 15px darkred, -2px -2px 15px darkred;
+}
+
+
+.reset-btn {
+    max-width: 100%;
+    cursor: pointer;
 }
